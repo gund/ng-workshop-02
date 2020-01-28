@@ -1,0 +1,16 @@
+<h2>List</h2>
+
+<p>
+  <input type="text" [(ngModel)]="name" (keydown.enter)="addName()" />
+  <button [disabled]="!name" (click)="addName()">
+    Add item
+  </button>
+</p>
+
+<p *ngFor="let item of list; let i = index">
+  <hello
+    [name]="item"
+    (updateName)="updateName($event, i)"
+    appLogUpdates
+  ></hello>
+</p>
