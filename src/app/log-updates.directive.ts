@@ -1,11 +1,11 @@
-import {Directive, ElementRef, HostListener, HostBinding, Input} from '@angular/core';
+import {Directive, ElementRef, HostListener} from '@angular/core';
 
 @Directive({
   selector: '[appLogUpdates]',
 })
 export class LogUpdatesDirective {
   constructor(private elemRef: ElementRef) {
-    // console.log(`Attached to`, this.elemRef.nativeElement);
+    console.log(`Attached to`, this.elemRef.nativeElement);
   }
 
   @HostListener('updateName', ['$event'])
