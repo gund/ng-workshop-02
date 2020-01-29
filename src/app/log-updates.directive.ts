@@ -1,4 +1,4 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appLogUpdates]',
@@ -8,5 +8,7 @@ export class LogUpdatesDirective {
     console.log(`Attached to`, this.elemRef.nativeElement);
   }
 
-  // TODO: Log name update events here
+  @HostListener('updateName', ['$event']) onuUpdateName(event) {
+    console.log(event);
+  }
 }
